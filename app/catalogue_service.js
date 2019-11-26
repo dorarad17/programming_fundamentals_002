@@ -23,15 +23,25 @@ const catalogue = [
 ];
 
 function countBooks() {
-  // Your code here
+  return catalogue.length
 }
 
 function checkBook(book) {
-  // Your code here
+  return catalogue.includes(book);
 }
 
 function countBooksByFirstLetter(letter) {
-  // Your code here
+
+  let matchesCount = 0;
+
+  catalogue.forEach(function(title) {
+    let firstLetter = title[0];
+    if (firstLetter === letter){
+      console.log(firstLetter)
+      matchesCount++;
+    };
+  })
+  return matchesCount
 }
 
 function countBooksByKeyword(keyword) {
