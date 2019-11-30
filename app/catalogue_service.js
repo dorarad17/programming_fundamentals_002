@@ -39,17 +39,28 @@ function countBooksByFirstLetter(letter) {
     if (firstLetter === letter){
       console.log(firstLetter)
       matchesCount++;
-    };
+    }
   })
   return matchesCount
 }
 
 function countBooksByKeyword(keyword) {
-  // Your code here
+  let count = 0;
+  for(let i=0; i < catalogue.length; i++) {
+    if(catalogue[i].toLowerCase().includes(keyword.toLowerCase())) {
+      count++;
+    }
+  }
+  return count;
 }
 
 function getBooksByAuthor(author) {
-  // Your code here
+  let booksFound = []
+  catalogue.forEach(function(title) {
+    if(title.toLowerCase().includes(author.toLowerCase())) {
+      booksFound.push(title)}
+  })
+  return booksFound
 }
 
 module.exports = {

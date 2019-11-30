@@ -23,3 +23,19 @@ describe("catalogueService.countBooksByFirstLetter", () => {
     expect(catalogueService.countBooksByFirstLetter("X")).toBe(0);
   });
 });
+
+describe("catalogueService.countBooksByKeyword", () => {
+  test("counts the number of books which include the keyword in the title", () => {
+    expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
+  });
+});
+
+describe("catalogueService.getBooksByAuthor", () => {
+  test("returns all the titles by a given author", () => {
+    expect(catalogueService.getBooksByAuthor("Charles Dickens")).toEqual([
+      "A Tale of Two Cities by Charles Dickens",
+      "Oliver Twist by Charles Dickens",
+      "Great Expectations by Charles Dickens"
+    ]);
+  });
+});
